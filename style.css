@@ -35,18 +35,19 @@ header {
 }
 .top-bar {
     background-color: #fff;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     height: 56px;
     padding-left: 20px; padding-right: 20px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    left: 0; top: 38px;
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 999;
     border-bottom: 1px solid #e5e5e5;
+    transition: top 0.3s ease-in-out;
 
 }
 .logo-box {
@@ -56,7 +57,16 @@ header {
     width: 100%;
     display: block;
 }
+.util-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.util-box img {
+    height: 20px;
+    width: auto;
+}
 .main-slide {
-    width: 100%; height: 720px;
+    width: 100%; height: 1800px;
     background-color: antiquewhite;
 }
