@@ -62,3 +62,51 @@
         object-position: 65% center;
     }
 }
+@keyframes main-slide {
+    /* 1번 */
+    0%,
+    12% {
+        transform: translateX(0);
+    }
+
+    /* 2번 */
+    14.285%,
+    26.285% {
+        transform: translateX(-100%);
+    }
+
+    /* 3번 */
+    28.571%,
+    40.571% {
+        transform: translateX(-200%);
+    }
+
+    /* 4번 */
+    42.857%,
+    54.857% {
+        transform: translateX(-300%);
+    }
+
+    /* 5번 */
+    57.143%,
+    69.143% {
+        transform: translateX(-400%);
+    }
+
+    /* 6번 */
+    71.429%,
+    83.429% {
+        transform: translateX(-500%);
+    }
+
+    /* 7번 */
+    85.714%,
+    97.714% {
+        transform: translateX(-600%);
+    }
+
+    /* 복제한 1번 */
+    100% {
+        transform: translateX(-700%);
+    }
+}
