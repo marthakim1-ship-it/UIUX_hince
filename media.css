@@ -1,0 +1,64 @@
+@media screen and (max-width: 768px) {
+    .pop-up {
+        height: 34px;
+        padding: 0 45px;
+
+        font-size: 12px;
+    }
+
+    .pop-up > a {
+        line-height: 34px;
+    }
+
+    .close {
+        right: 10px;
+    }
+
+    .top-bar {
+        top: 34px;
+        height: 54px;
+        padding: 0 16px;
+    }
+
+    .logo-box {
+        width: 76px;
+    }
+
+    .util-box {
+        gap: 12px;
+    }
+
+    .util-box img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .main-visual {
+        height: 620px;
+    }
+
+    .slide-text {
+        top: auto;
+        bottom: 60px;
+        left: 24px;
+
+        width: calc(100% - 48px);
+
+        transform: none;
+    }
+
+    .slide-text h2 {
+        margin: 18px 0 12px;
+
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .slide-text p {
+        font-size: 15px;
+    }
+
+    .slide-img img {
+        object-position: 65% center;
+    }
+}
