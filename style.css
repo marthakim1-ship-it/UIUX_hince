@@ -1,5 +1,7 @@
 header {
     border: 1px solid red;
+    position: relative;
+    z-index: 100;
     
 }
 .pop-up::before {
@@ -89,24 +91,29 @@ header {
 
 /* 🚃 2. 슬라이드들을 가로로 엮은 기차 */
 .slide-wrapper {
-    display: flex; /* 자식 슬라이드들을 가로로 나란히 나열 */
-    width: 300%; /* 슬라이드가 3개라면 가로폭은 300% */
+    display: flex;
+    width: 100%;
     height: 100%;
-    
-    /* 🎯 3단계에서 배울 슬라이드 이동을 담당할 핵심 수식! */
-    transform: translateX(0%); /* 0%면 1번 슬라이드, -33.33%면 2번 슬라이드 */
-    transition: transform 0.5s ease-in-out; /* 부드러운 이사 효과 */
+    /* 첫 번째 슬라이드 */
+    transform: translateX(0%);
+    /* 두 번째 슬라이드 */
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+
 }
 
 /* 📦 3. 개별 슬라이드 한 칸 */
 .slide-item {
-    width: 33.333%; /* 전체 300% 중 정확히 1/3씩 공간 분할 */
+    flex: 0 0 100;
+    width: 100%;
     height: 100%;
+    padding: 0 10%; /* 좌우 적당한 여백 */
+    box-sizing: border-box;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%; /* 좌우 적당한 여백 */
-    box-sizing: border-box;
+   
     background-color: #f7ede9; /* 힌스 특유의 미니멀 핑크톤 배경 */
 }
 
