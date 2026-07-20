@@ -57,15 +57,22 @@ header {
     width: 100%;
     display: block;
 }
+/* 전체 박스 정렬 */
 .util-box {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.util-box img {
-    height: 20px;
-    width: auto;
+.until-box li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
+
 .main-visual {
     width: 100%; height: 720px;
     background-color: antiquewhite;
