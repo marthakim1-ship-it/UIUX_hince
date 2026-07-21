@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <!-- 상단 팝업 -->
+    <!-- 상단 팝업 -->
         <div class="pop-up">
             <a href="#" target="_blank" title="kakaolink">카카오톡 플러스 친구 추가 시 3,000원 쿠폰!</a>
             <button type="button" class="close" aria-labal="팝업 닫기">
@@ -25,19 +25,21 @@
                 <img src="./image/icon_menu.svg" alt="menu">
             </a>
         </div>
-        <!-- 가운데: 로고 -->
+    <!-- 가운데: 로고 -->
         <h1 class="logo-box">
             <a href="#" target="_blank">
                 <img src="./image/logo_hince.svg" alt="hince">
             </a>
         </h1>
-        <!-- 오른쪽 검색창+아이콘 그룹 -->
+    <!-- 오른쪽 검색창+아이콘 그룹 -->
         <div class="util-box">
             <!-- 검색 -->
             <form class="search-box" action="#" method="get" role="search">
                 <label class="blind" for="site-search"></label>
 
-                <input type="search" id="site-search" name="keyword" placeholder="NEW 칠 보야지 컬렉션">
+                <span class="search-keyword">NEW 칠 보야지 컬렉션</span>
+
+                <input type="search" id="site-search" name="keyword" autocomplete="off">
 
                 <button type="submit" class="search-submit"
                 aria-label="검색">
@@ -46,13 +48,14 @@
             </form>
             
 
-        <!-- 마이페이지 -->
+    <!-- 마이페이지 -->
         <a href="#" class="user-box" aria-label="마이페이지">
             <img src="./image/Icon_user.svg" alt="">
         </a>
 
         <a href="#" class="shoppingbag" aria-label="장바구니">
             <img src="./image/Icon_shoppingbag.svg" alt="">
+            <span class="cart-count">0</span>
         </a>
         </div>
     </div>
