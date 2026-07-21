@@ -13,12 +13,10 @@
         <!-- 상단 팝업 -->
         <div class="pop-up">
             <a href="#" target="_blank" title="kakaolink">카카오톡 플러스 친구 추가 시 3,000원 쿠폰!</a>
-            
-        <div class="close">
-            <a href="#" target="_blank" title="닫기"></a>
-                <img src="./image/icon_close_w.svg" alt="close">
+            <button type="button" class="close" aria-labal="팝업 닫기">
+                <img src="./image/icon_close_w.svg" alt="">
+            </button>
         </div>
-    </div>
 
     <!-- 왼쪽: 햄버거 메뉴 버튼 -->
     <div class="top-bar">
@@ -36,23 +34,20 @@
         <!-- 오른쪽 검색창+아이콘 그룹 -->
         <div class="util-box">
             <!-- 검색 -->
-            <li class="search">
-                <a href="/search" aria-label="검색창 열기">
-                    <img src="./image/Icon_search.svg" alt="검색 아이콘">
-                </a>
-            </li>    
+            <button type="button" class="search-btn"
+                aria-label="검색창 열기"
+                aria-expanded="false">
+                <span>검색</span>
+                <img src="./image/Icon_search.svg" alt="">
+            </button>
         <!-- 마이페이지 -->
-            <div class="user-box">
-                <a href="#" target="_blank">
-                    <img src="./image/Icon_user.svg" alt="user-box">
-                </a>
-            </div>
+        <a class="user-box" href="#" aria-label="마이페이지">
+            <img src="./image/Icon_user.svg" alt="">
+        </a>
         <!-- 장바구니 -->
-            <div class="shoppingbag">
-                <a href="#" target="_blank">
-                    <img src="./image/Icon_shoppingbag.svg" alt="shoppingbag">
-                </a>
-            </div>
+        <a class="shoppingbag" href="#" aria-label="장바구니">
+            <img src="./image/Icon_shoppingbag.svg" alt="">
+        </a>
         </div>
     </div>
 <main>
