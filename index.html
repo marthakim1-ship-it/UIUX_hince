@@ -34,18 +34,24 @@
         <!-- 오른쪽 검색창+아이콘 그룹 -->
         <div class="util-box">
             <!-- 검색 -->
-            <button type="button" class="search-btn"
-                aria-label="검색창 열기"
-                aria-expanded="false">
-                <span>검색</span>
+            <form class="search-box" action="#" method="get" role="search">
+                <label class="blind" for="site-search"></label>
+
+                <input type="search" id="site-search" name="keyword" placeholder="NEW 칠 보야지 컬렉션">
+
+                <button type="submit" class="search-submit"
+                aria-label="검색">
                 <img src="./image/Icon_search.svg" alt="">
-            </button>
+                </button>
+            </form>
+            
+
         <!-- 마이페이지 -->
-        <a class="user-box" href="#" aria-label="마이페이지">
+        <a href="#" class="user-box" aria-label="마이페이지">
             <img src="./image/Icon_user.svg" alt="">
         </a>
-        <!-- 장바구니 -->
-        <a class="shoppingbag" href="#" aria-label="장바구니">
+
+        <a href="#" class="shoppingbag" aria-label="장바구니">
             <img src="./image/Icon_shoppingbag.svg" alt="">
         </a>
         </div>
