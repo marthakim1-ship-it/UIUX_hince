@@ -15,13 +15,17 @@
         width: 18px;
         height: 18px;
     }
-
-    .top-bar {
-        top: 34px;
-        height: 54px;
-        padding: 0 16px;
+    header {
+    top: -34px;
+    height: 88px;
     }
-
+   .top-bar {
+    top: 0;
+    height: 54px;
+   }
+    main {
+    margin-top: -54px;
+    }
     .logo-box {
         width: 76px;
     }
@@ -34,7 +38,7 @@
         width: 20px;
         height: 20px;
     }
-    
+
     .main-visual {
         height: 620px;
     }
