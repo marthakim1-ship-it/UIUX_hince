@@ -72,10 +72,11 @@ header {
     justify-self: start;
 }
 
-.menu-btn-box a {
+.menu-btn-box .menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .menu-btn-box img {
@@ -492,5 +493,299 @@ main {
     font-size: 12px;
     font-weight: 600;
     line-height: 1;
+}
+/* 햄버거 메뉴 상태 체크박스 */
+.menu-toggle {
+    position:absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+/* 사이드 메뉴 전체 영역 */
+.side-menu-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility 0s linear 0.35s;
+}
+/* 홈페이지를 어둡게 만드는 배경 */
+.menu-dim {
+    position: absolute;
+    inset: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.35s ease;
+}
+/* 실제 왼쪽 사이드 메뉴 */
+.side-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 296px;
+    max-width: calc(100vw - 24px);
+
+    height: 100vh;
+    height: 100dvh;
+
+    overflow-y: auto;
+
+    background-color: #fff;
+
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+}
+/* checkbox가 선택되면 전체 메뉴 활성화 */
+.menu-toggle:checked ~ .side-menu-wrap {
+    visibility: visible;
+    pointer-events: auto;
+
+    transition-delay: 0s;
+}
+
+/* 오른쪽 화면 어둡게 */
+.menu-toggle:checked ~ .side-menu-wrap .menu-dim {
+    opacity: 1;
+}
+
+/* 왼쪽 메뉴 화면 안으로 이동 */
+.menu-toggle:checked ~ .side-menu-wrap .side-menu {
+    transform: translateX(0);
+}
+/* 사이드 메뉴 상단과 닫기 버튼 */
+.side-top {
+    height: 56px;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+}
+
+.menu-close {
+    position: relative;
+
+    width: 18px;
+    height: 18px;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+.menu-close::before,
+.menu-close::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 18px;
+    height: 1px;
+
+    background-color: #111;
+}
+
+.menu-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* 로그인 영역 */
+.login-area {
+    margin: 0 28px;
+    padding: 22px 0 30px;
+
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.login-link {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #d88c9d;
+
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.login-arrow {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.login-area p {
+    margin-top: 14px;
+
+    color: #444;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+/* 1차 메뉴 */
+.side-nav {
+    padding-top: 15px;
+}
+
+.menu-group {
+    margin: 0;
+}
+
+.menu-group summary {
+    height: 56px;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #000;
+    background-color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    list-style: none;
+    cursor: pointer;
+}
+
+/* 크롬 기본 화살표 제거 */
+.menu-group summary::-webkit-details-marker {
+    display: none;
+}
+/* 메뉴 펼침 화살표 */
+.menu-arrow {
+    width: 8px;
+    height: 8px;
+
+    display: block;
+
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+/* 메뉴가 열린 상태 */
+.menu-group[open] .menu-arrow {
+    transform: rotate(-135deg);
+}
+/* 2차 하위 메뉴 */
+.sub-menu {
+    padding: 8px 28px 14px;
+
+    background-color: #fafafa;
+}
+
+.sub-menu li {
+    width: 100%;
+}
+
+.sub-menu a {
+    min-height: 41px;
+
+    display: flex;
+    align-items: center;
+
+    color: #777;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.sub-menu a:hover {
+    color: #111;
+}
+/* CHILL VOYAGE */
+.chill-link {
+    gap: 5px;
+}
+
+.chill-icon {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+
+    display: block;
+
+    background-color: #b9dcf5;
+    border-radius: 3px 7px 7px 7px;
+
+    transform: rotate(45deg);
+}
+/* NOTICE 오른쪽 플러스 */
+.notice-link {
+    justify-content: space-between;
+}
+
+.plus-icon {
+    position: relative;
+
+    width: 14px;
+    height: 14px;
+
+    display: block;
+}
+
+.plus-icon::before,
+.plus-icon::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: #999;
+
+    transform: translate(-50%, -50%);
+}
+
+.plus-icon::before {
+    width: 13px;
+    height: 1px;
+}
+
+.plus-icon::after {
+    width: 1px;
+    height: 13px;
+}
+/* 하위 메뉴가 없는 단일 메뉴 */
+.single-menu {
+    height: 56px;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000;
+    background-color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.single-menu:hover {
+    background-color: #fafafa;
+}
+body:has(.menu-toggle:checked) {
+    overflow: hidden;
 }
 
