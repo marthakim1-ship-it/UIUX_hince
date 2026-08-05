@@ -2,7 +2,7 @@ header {
     position: sticky;
     top: -38px;
     z-index: 1000;
-     width: 100%;
+    width: 100%;
 }
 
 .pop-up::before {
@@ -51,10 +51,7 @@ header {
 }
 /* top 네비게이션 */
 .top-bar {
-    border: 1px solid red;
     position: relative;
-    top: 0;
-    left: 0;
     z-index: 999;
 
     width: 100%;
@@ -65,9 +62,10 @@ header {
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
 
-    background-color: rgba(255, 255, 255, 0.00);
-
+    background-color: rgba(255, 255, 255, 0.50);
 }
+
+
 /* 왼쪽 메뉴 */
 .menu-btn-box {
     justify-self: start;
@@ -337,16 +335,73 @@ main {
     cursor: pointer;
 }
 
-/* 왼쪽 가로선 */
-.slide-line {
-    display: block;
 
-    width: 32px;
-    height: 1px;
+/* 슬라이드 순서 표시 바 */
+.slide-line {
+    position: relative;
+
+    width: 70px;
+    height: 2px;
+
+    display: block;
+    overflow: hidden;
+
+    /* 전체 길이 */
+    background-color: rgba(17, 17, 17, 0.25);
+}
+
+/* 현재 슬라이드 순서만큼 표시되는 검정 바 */
+.slide-line::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 100%;
 
     background-color: #111;
 }
+/* 1번 슬라이드 */
+.slide1 .slide-line::after {
+    width: 14.285%;
+}
 
+/* 2번 슬라이드 */
+.slide2 .slide-line::after {
+    width: 28.57%;
+}
+
+/* 3번 슬라이드 */
+.slide3 .slide-line::after {
+    width: 42.855%;
+}
+
+/* 4번 슬라이드 */
+.slide4 .slide-line::after {
+    width: 57.14%;
+}
+
+/* 5번 슬라이드 */
+.slide5 .slide-line::after {
+    width: 71.425%;
+}
+
+/* 6번 슬라이드 */
+.slide6 .slide-line::after {
+    width: 85.71%;
+}
+
+/* 7번 슬라이드 */
+.slide7 .slide-line::after {
+    width: 100%;
+}
+
+/* 복제된 1번 슬라이드 */
+.slide8 .slide-line::after {
+    width: 14.285%;
+}
 /* 아이콘 영역 */
 .slide-icon {
     position: relative;
@@ -498,7 +553,6 @@ main {
 }
 /* 햄버거 메뉴 상태 체크박스 */
 .menu-toggle {
-    border: 1px solid blue;
     position:absolute;
     width: 1px;
     height: 1px;
@@ -509,7 +563,6 @@ main {
 }
 /* 사이드 메뉴 전체 영역 */
 .side-menu-wrap {
-    border: 1px solid blue;
     position: fixed;
     inset: 0;
     z-index: 5000;
@@ -530,7 +583,6 @@ main {
 }
 /* 실제 왼쪽 사이드 메뉴 */
 .side-menu {
-    border: 1px solid red;
     position: absolute;
     top: 0;
     left: 0;
@@ -570,7 +622,6 @@ main {
 }
 /* 사이드 메뉴 상단과 닫기 버튼 */
 .side-top {
-    border: 1px solid red;
     height: 56px;
     padding: 0 28px;
 
@@ -580,7 +631,6 @@ main {
 }
 
 .menu-close {
-    border: 1px solid red;
     position: relative;
 
     width: 18px;
@@ -621,7 +671,6 @@ main {
 }
 
 .login-link {
-    border: 1px solid green;
     width: fit-content;
 
     display: flex;
@@ -642,7 +691,6 @@ main {
 }
 
 .login-area p {
-    border: 1px solid green;
     margin-top: 14px;
     
     color: #444;
@@ -663,7 +711,6 @@ main {
 }
 
 .menu-group summary {
-    border: 1px solid red;
     height: 56px;
     padding: 0 28px;
 
@@ -715,7 +762,6 @@ main {
 }
 
 .sub-menu a {
-    border: 1px solid green;
     min-height: 41px;
 
     display: flex;
@@ -786,7 +832,6 @@ main {
 }
 /* 하위 메뉴가 없는 단일 메뉴 */
 .single-menu {
-    border: 1px solid red;
     height: 56px;
     padding: 0 28px;
 
@@ -807,3 +852,197 @@ body:has(.menu-toggle:checked) {
     overflow: hidden;
 }
 
+
+/*  베스트 셀러 */
+
+.best-seller {
+    width: 100%;
+    padding: 110px 20px 120px;
+
+    background-color: #fff;
+}
+
+/* 섹션 제목 */
+.best-title {
+    margin-bottom: 48px;
+
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+/* 상품 목록 */
+.best-list {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    list-style: none;
+}
+/* 상품 카드 */
+.best-item {
+    min-width: 0;
+}
+
+.best-link {
+    width: 100%;
+}
+
+/* 상품 이미지 영역 */
+.best-img {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+
+    overflow: hidden;
+
+    background-color: #f6f6f6;
+}
+
+.best-img img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* 순위 숫자 */
+.best-rank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    background-color: #ad7378;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* 상품 정보 */
+.best-info {
+    padding-top: 16px;
+}
+
+.best-name {
+    overflow: hidden;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 가격 */
+.best-price {
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 14px;
+}
+
+.discount-rate {
+    color: #d98394;
+    font-weight: 600;
+}
+
+.sale-price {
+    color: #111;
+    font-weight: 700;
+}
+
+.original-price {
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* 컬러칩 */
+.best-colors {
+    margin-top: 11px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.color-chip {
+    width: 10px;
+    height: 10px;
+
+    display: block;
+
+    background-color: #EB5E57;
+    border-radius: 50%;
+}
+
+.color-chip:nth-child(2) {
+    background-color: #F5544C;
+}
+
+.color-chip:nth-child(3) {
+    background-color: #EF525D;
+}
+
+.color-chip:nth-child(4) {
+    background-color: #E82E43;
+    
+}
+.color-chip:nth-child(5) {
+    background-color: #DC5C5D;
+    
+}
+.color-chip:nth-child(6) {
+    background-color: #D84943;
+    
+}
+.color-chip:nth-child(7) {
+    background-color: #E73F34;
+    
+}
+.color-chip:nth-child(7) {
+    background-color: #CF4751;
+    
+}
+.color-count {
+    margin-left: 4px;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+/* BEST 배지 */
+.best-badge {
+    width: fit-content;
+    margin-top: 14px;
+    padding: 4px 8px;
+
+    display: block;
+
+    color: #fff;
+    background-color: #d77983;
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: 600;
+}
