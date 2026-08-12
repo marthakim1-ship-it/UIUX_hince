@@ -858,7 +858,6 @@ body:has(.menu-toggle:checked) {
 .best-seller {
     width: 100%;
     padding: 110px 20px 120px;
-
     background-color: #fff;
 }
 
@@ -1045,4 +1044,78 @@ body:has(.menu-toggle:checked) {
 
     font-size: 10px;
     font-weight: 600;
+}
+
+.new-arrivals {
+    padding: 120px 0;
+}
+
+.new-arrivals h2 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.new-con {
+    width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 30px;
+}
+
+
+/* 왼쪽 큰 이미지 */
+.new-main {
+    width: 500px;
+}
+
+.new-main img {
+    display: block;
+    width: 100%;
+}
+
+
+/* 오른쪽 상품 4개 */
+.new-product {
+    width: 470px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+}
+
+.new-item img {
+    display: block;
+    width: 100%;
+}
+
+.new-item .name {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.new-item strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+/* VIEW MORE */
+.view-more {
+    display: block;
+
+    width: 165px;
+    height: 46px;
+
+    margin: 50px auto 0;
+
+    border: 1px solid #d9a0aa;
+
+    text-align: center;
+    line-height: 36px;
+
+    font-size: 14px;
+    color: #d98c9a;
 }
