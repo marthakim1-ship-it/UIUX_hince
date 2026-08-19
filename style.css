@@ -906,6 +906,7 @@ body:has(.menu-toggle:checked) {
 
 .new-arrivals {
     padding: 120px 20;
+    padding-bottom: 100px;
 }
 
 .new-arrivals h2 {
@@ -918,6 +919,7 @@ body:has(.menu-toggle:checked) {
 
 .new-con {
     width: 100%;
+    padding-bottom: 60px;
     max-width: 1260px;
     margin: 0 auto;
     display: flex;
@@ -970,10 +972,239 @@ body:has(.menu-toggle:checked) {
     display: block;
     width: 165px;
     height: 46px;
+    
     margin: 50px auto 0;
     border: 1px solid #d9a0aa;
     text-align: center;
     line-height: 36px;
     font-size: 14px;
     color: #d98c9a;
+}
+/* =========================================
+   프로모션 배너 슬라이드
+========================================= */
+
+.banner-slide {
+    position: relative;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 50px 120px;
+}
+
+
+/* 실제 배너가 보이는 영역 */
+.banner-view {
+    position: relative;
+
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+
+/* 배너 4개 전체 */
+.banner-track {
+    width: 200%;
+
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    animation: banner-slide 12s infinite;
+}
+
+
+/* 배너 하나 */
+.banner-item {
+    width: 25%;
+    flex-shrink: 0;
+
+    padding: 0 12px;
+}
+
+
+/* 첫 번째 배너 왼쪽 여백 제거 */
+.banner-item:nth-child(odd) {
+    padding-left: 0;
+}
+
+
+/* 두 번째 배너 오른쪽 여백 제거 */
+.banner-item:nth-child(even) {
+    padding-right: 0;
+}
+
+
+/* 이미지 + 텍스트 기준 */
+.banner-item > a {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* 배너 이미지 */
+.banner-item img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   배너 위 텍스트
+========================================= */
+
+.banner-text {
+    position: absolute;
+
+    top: 50%;
+    left: 6.5%;
+
+    transform: translateY(-50%);
+
+    color: #111;
+}
+
+
+/* 위쪽 작은 글씨 */
+.banner-text p {
+    margin: 0 0 10px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+
+/* 아래쪽 큰 글씨 */
+.banner-text h3 {
+    margin: 0;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   좌우 화살표
+========================================= */
+
+.banner-arrow {
+    position: absolute;
+    top: 30%;
+    z-index: 20;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #eadbdd;
+    background-color: rgba(255, 250, 250, 0.50);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #b98086;
+
+    font-size: 26px;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    /* 기본 상태에서는 숨김 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+}
+/* 배너에 마우스를 올리면 화살표 표시 */
+.banner-slide:hover .banner-arrow {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 왼쪽 화살표 */
+.banner-prev {
+    left: 27px;
+    
+}
+
+
+/* 오른쪽 화살표 */
+.banner-next {
+    right: 27px;
+}
+
+/* =========================================
+   페이지 점
+========================================= */
+
+.banner-pagination {
+    margin-top: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.banner-pagination span {
+    width: 8px;
+    height: 8px;
+
+    display: block;
+
+    background-color: #d8c5c5;
+    border-radius: 50%;
+}
+
+
+.banner-pagination .active {
+    background-color: #ad7378;
+}
+
+
+/* =========================================
+   자동 슬라이드
+========================================= */
+
+@keyframes banner-slide {
+
+    /* 1 + 2번 배너 */
+    0%,
+    45% {
+        transform: translateX(0);
+    }
+
+
+    /* 3 + 4번 배너 */
+    50%,
+    95% {
+        transform: translateX(-50%);
+    }
+
+
+    /* 처음으로 */
+    100% {
+        transform: translateX(0);
+    }
 }
